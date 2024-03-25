@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Inject, Injectable, Optional } from '@angular/core';
 import { CookiesOptions } from '../cookies-options';
 import { CookiesOptionsService } from '../cookies-options.service';
 import { CookiesService } from '../cookies.service';
@@ -11,8 +11,8 @@ export class ServerCookiesService extends CookiesService {
 
   constructor(
     cookiesOptions: CookiesOptionsService,
-    @Inject('REQUEST') private request: any,
-    @Inject('RESPONSE') private response: any,
+    @Optional @Inject('REQUEST') private request: any,
+    @Optional @Inject('RESPONSE') private response: any,
   ) {
     super(cookiesOptions);
   }
